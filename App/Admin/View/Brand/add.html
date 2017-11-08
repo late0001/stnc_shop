@@ -29,7 +29,9 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 品牌管理 <span class="c-gray en">&gt;</span> 新增品牌 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <form class="form form-horizontal" action="{:U('save')}" method="post" onsubmit="return ac_from();" enctype="multipart/form-data">
+
+
+    <form class="form form-horizontal" action="{:U('save')}" method="post" onsubmit="return ax()" enctype="multipart/form-data" >
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>品牌名称：</label>
             <div class="formControls col-xs-8 col-sm-3">
@@ -51,6 +53,7 @@
             </div>
         </div>
     </form>
+
 </div>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
@@ -62,9 +65,23 @@
 <script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script>	
+	function ax(){
+		var name=document.getElementById('name').value;
+        if(!name){
+            alert('品牌名称不能为空');
+			name.focus();
+            return false;
+        }
+
+		return true;	
+	}
+</script>
 
 <script>
-    function ac_from(){
+
+    function ac_form(){
+		alert('你大爷的');
         var name=document.getElementById('name').value;
         if(!name){
             alert('请输入登录账号！');
@@ -81,7 +98,6 @@
 
     }
 </script>
-
 
 </body>
 </html>

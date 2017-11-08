@@ -18,6 +18,7 @@ class BrandController extends PublicController{
 	public function index(){
 		//搜索，根据广告标题搜索
 		$brand_name = intval($_REQUEST['brand_name']);
+		//echo "brand_name ============".intval($_REQUEST['brand_name']);
 		$condition = array();
 		if ($brand_name) {
 			$condition['name'] = array('LIKE','%'.$brand_name.'%');
@@ -59,7 +60,7 @@ class BrandController extends PublicController{
 		//如果是修改，则查询对应广告信息
 		if (intval($_GET['id'])) {
 			$id = intval($_GET['id']);
-		
+
 			$brand_info = $this->Brand->where('id='.intval($id))->find();
 			$this->assign('brand_info',$brand_info);
 		}
@@ -123,7 +124,7 @@ class BrandController extends PublicController{
 	*/
 	public function del(){
 		//获取广告id，查询数据库是否有这条数据
-		$id = intval($_REQUEST['did']);
+		$id = intval($_REQUEST['id']);
 		$check_info = $this->Brand->where('id='.intval($id))->find();
 		if (!$check_info) {
 			$this->error('参数错误！');

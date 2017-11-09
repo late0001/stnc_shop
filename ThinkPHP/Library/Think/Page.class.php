@@ -62,7 +62,10 @@ class Page{
             $this->config[$name] = $value;
         }
     }
-
+	
+	public function getPage(){
+		return $this->nowPage;	
+	}
     /**
      * 生成链接URL
      * @param  integer $page 页码

@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 class BrandController extends PublicController{
-
+	private $cur_page =1;
 	/*
 	*
 	* 构造函数，用于导入外部文件和公共方法
@@ -27,10 +27,20 @@ class BrandController extends PublicController{
 
 		//分页
 		$count   = $this->Brand->where($condition)->count();// 查询满足要求的总记录数
-		$Page    = new \Think\Page($count,6);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+		if(isset($_GET['p'])){
+			$i_p = intval($_GET['p']);
+			if($count % 6 == 0 && $count /6 < $i_p ){
+				$i_p = $count /6;
+			}else if($count/6+1 < $i_p){
+				$i_p = $count /6 + 1;
+			}	
+		}
+		
+		//传入总记录数和每页显示的记录条数
+		$Page    = new \Think\Page($count,6);// 实例化分页类 传入总记录数和每页显示的记录数(6)
 
 		//头部描述信息，默认值 “共 %TOTAL_ROW% 条记录”
-		$Page->setConfig('header', '<li class="rows">共<b>%TOTAL_ROW%</b>条&nbsp;第<b>%NOW_PAGE%</b>页/共<b>%TOTAL_PAGE%</b>页</li>');
+		$Page->setConfig('header', '共<b>%TOTAL_ROW%</b>条&nbsp;第<b>%NOW_PAGE%</b>页/共<b>%TOTAL_PAGE%</b>页');
 		//上一页描述信息
 	    $Page->setConfig('prev', '上一页');
 	    //下一页描述信息
@@ -42,9 +52,13 @@ class BrandController extends PublicController{
 	    $Page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
 
 		$show  = $Page->show();// 分页显示输出
-
-		$list = $this->Brand->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();		
-
+			
+		if(isset($_GET['p'])){	
+			$list = $this->Brand->where($condition)->page($i_p.',6')->select();
+		}else{
+			$list = $this->Brand->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();
+		}
+		$cur_page = $Page->getPage();
 		$this->assign('list',$list);
 		$this->assign('page',$show);
 		$this->display(); // 输出模板
@@ -140,7 +154,7 @@ class BrandController extends PublicController{
 					@unlink($img_url);
 				}
 			}
-			$this->success('操作成功.','index');
+			$this->success('操作成功.','index?p='+ $cur_page);
 		}else{
 			$this->error('操作失败.');
 		}

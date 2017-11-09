@@ -66,6 +66,7 @@ class BrandController extends PublicController{
 	}
 
 
+
 	/*
 	*
 	* 跳转添加或修改品牌数据页面

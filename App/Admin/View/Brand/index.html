@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plugins/layui/2.1.7/css/layui.css"  media="all">
+
     <!--[if IE 6]>
     <script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -76,11 +76,7 @@
               </div>
             </td>
         </tr>
-        <tr class="text-c">
-            <td colspan="10" class="td_2">
-             	 <div id="demo2-2"></div>
-            </td>
-        </tr>
+   
     </table>
      
 </div>
@@ -95,24 +91,7 @@
 <script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
-<script src="__PUBLIC__/plugins/layui/2.1.7/layui.js" charset="utf-8"></script>
-<script>
-layui.use(['laypage', 'layer'], function(){
-  var laypage = layui.laypage
-  ,layer = layui.layer;
-  laypage.render({
-    elem: 'demo2-2'
-    ,count: 100
-    ,theme: '#FF5722'
-	,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
-	,jump: function(obj){
-      //console.log(obj)
-	 // alert(obj.curr);
-	  //location = {}
-    }
-  });
-});
-</script>
+
 
 <script>
     function product_option(page){

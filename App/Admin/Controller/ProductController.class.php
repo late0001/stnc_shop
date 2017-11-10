@@ -32,7 +32,7 @@ class ProductController extends PublicController{
 		$page=(int)$_GET['page'];
 		$page<0?$page=0:'';
 		$limit=$page*rows;
-		$page_index=$this->page_index($count,$rows,$page);
+		$page_index=$this->page_index($count,$rows,$page);//总记录条数，页数，页号
 		$productlist=M('product')->where($where)->order('addtime desc')->limit($limit,rows)->select();
 		//dump($productlist);exit;
 		foreach ($productlist as $k => $v) {

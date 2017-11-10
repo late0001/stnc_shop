@@ -38,7 +38,7 @@ class PublicController extends Controller{
 				总页数:'.$row_page.'&nbsp;&nbsp;&nbsp;
 				当前页:'.($page+1).'&nbsp;&nbsp;
 			   </span>
-			   '.$pare.$next.'&nbsp;&nbsp; 
+			   '.$pare.'&nbsp;'.$next.'&nbsp;&nbsp; 
 			   <select onchange="product_option(this.value)">';
 		
 		for($i=0; $i<$row_page; $i++){

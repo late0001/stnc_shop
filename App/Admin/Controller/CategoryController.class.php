@@ -96,7 +96,7 @@ class CategoryController extends PublicController{
 		    }else{// 上传成功 获取上传文件信息
 			    $this->category->bz_1 = 'UploadFiles/'.$info2['savepath'].$info2['savename'];
 			    if (intval($_POST['cid'])) {
-					$photo = $this->category->where('id='.intval($_POST['cid']))->getField('bz_1');
+					$photo = $this->category->where('id='.intval($_POST['cid']))->getField('bz_1');//缩略图路径
 				}
 		    }
 		}

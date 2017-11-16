@@ -86,7 +86,7 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 添加产品 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <form class="form form-horizontal" action="?id={$id}&page={$page}&type={$type}&name={$name}&shop_id={$shop_id}" method="post" onsubmit="return ac_from();" enctype="multipart/form-data">
+    <form class="form form-horizontal" action="?id={$id}&page={$page}&type={$type}&name={$name}&shop_id={$shop_id}" method="post" onSubmit="return ac_from();" enctype="multipart/form-data">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品名称：</label>
             <div class="formControls col-xs-8 col-sm-3">
@@ -104,7 +104,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>选择分类：</label>
             <div class="formControls col-xs-8 col-sm-3">
-                <select class="inp_1" name="cateid" id="cateid" onchange="getcid();" style="width:150px;margin-right:5px;">
+                <select class="inp_1" name="cateid" id="cateid" onChange="getcid();" style="width:150px;margin-right:5px;">
                     <!-- 遍历 -->
                     <option value="">一级分类</option>
                     <volist name="cate_list" id="v">
@@ -221,7 +221,7 @@
                     <div class="d1">已上传：</div>
                     <?php foreach ($img_str as $v) { ?>
                     <div>
-                        <div class="img-err" title="删除" onclick="del_img('<?php echo $v; ?>',this);">×</div>
+                        <div class="img-err" title="删除" onClick="del_img('<?php echo $v; ?>',this);">×</div>
                         <img src="<?php echo '__DATA__/'.$v; ?>" width="125" height="125">
                     </div>
                     <?php } ?>
@@ -236,7 +236,7 @@
                 <li>
                     <div class="d1">&nbsp;</div>
                     <div>
-                        &nbsp;<span class="btn cls" style="background:#D0D0D0; width:40px; color:black;" onclick="upadd();">添加</span>
+                        &nbsp;<span class="btn cls" style="background:#D0D0D0; width:40px; color:black;" onClick="upadd();">添加</span>
                     </div>
                 </li>
             </div>
@@ -310,7 +310,7 @@
 
     function upadd(obj){
         //alert('aaa');
-        $('#imgs_add').append('<div>&nbsp;&nbsp;<input type="file" style="width:160px;" name="files[]" /><a onclick="$(this).parent().remove();" class="btn cls" style="background:#D0D0D0; width:40px; color:black;"">删除</a></div>');
+        $('#imgs_add').append('<div><input type="file" style="width:160px;" name="files[]" /><a onclick="$(this).parent().remove();" class="btn cls" style="background:#D0D0D0; width:40px; color:black;"">删除</a></div>');
         return false;
     }
 

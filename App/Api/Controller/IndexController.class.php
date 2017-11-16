@@ -44,23 +44,23 @@ class IndexController extends PublicController {
         //======================
         $indeximg = M('indeximg')->where('1=1')->order('id asc')->field('photo')->select();
         $procat = array();
-        $procat[0]['name'] = '新闻资讯';
-        $procat[0]['imgs'] = __DATAURL__.$indeximg[0]['photo'];
+        $procat[0]['name'] = '脑残';
+        $procat[0]['icon'] = __DATAURL__.$indeximg[0]['photo'];
         $procat[0]['link'] = 'other';
         $procat[0]['ptype'] = 'news';
 
-        $procat[1]['name'] = '教学优势';
-        $procat[1]['imgs'] = __DATAURL__.$indeximg[1]['photo'];
+        $procat[1]['name'] = '2B';
+        $procat[1]['icon'] = __DATAURL__.$indeximg[1]['photo'];
         $procat[1]['link'] = 'other';
         $procat[1]['ptype'] = 'jxys';
 
-        $procat[2]['name'] = '学员风采';
-        $procat[2]['imgs'] = __DATAURL__.$indeximg[2]['photo'];
+        $procat[2]['name'] = '哈哈';
+        $procat[2]['icon'] = __DATAURL__.$indeximg[2]['photo'];
         $procat[2]['link'] = 'other';
         $procat[2]['ptype'] = 'xyfc';
 
-        $procat[3]['name'] = '关于我们';
-        $procat[3]['imgs'] = __DATAURL__.$indeximg[3]['photo'];
+        $procat[3]['name'] = '关于';
+        $procat[3]['icon'] = __DATAURL__.$indeximg[3]['photo'];
         $procat[3]['link'] = 'other';
         $procat[3]['ptype'] = 'gywm';
 

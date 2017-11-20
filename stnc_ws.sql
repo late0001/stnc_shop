@@ -3982,7 +3982,7 @@ CREATE TABLE `lr_program` (
 --
 
 INSERT INTO `lr_program` (`id`, `title`, `name`, `describe`, `logo`, `copyright`, `service_wx`, `tel`, `email`, `uptime`) VALUES
-(1, '邱老虎商城', '邱老虎商城', '邱老虎商城', 'UploadFiles/logo/1495530723265238.png', 'Copyright © 2016 tigerqiushop', '', '4006551365', '1433935693@qq.com', 1433935693);
+(1, '吸鬼商城', '邱吸鬼', '吸鬼商城', 'UploadFiles/logo/1495530723265238.png', 'Copyright © 2016 tigerqiushop', '', '400655xx65', '1433935693@qq.com', 1511190353);
 
 -- --------------------------------------------------------
 
@@ -4157,7 +4157,8 @@ CREATE TABLE `lr_shopping_char` (
 --
 
 INSERT INTO `lr_shopping_char` (`id`, `pid`, `price`, `num`, `buff`, `addtime`, `uid`, `shop_id`, `gid`, `type`) VALUES
-(1, 269, '235.00', 1, '', 1495779452, 3, 0, 0, 1);
+(1, 269, '235.00', 1, '', 1495779452, 3, 0, 0, 1),
+(2, 288, '64.00', 1, '', 1511192715, 1, 0, 0, 1);
 
 -- --------------------------------------------------------
 

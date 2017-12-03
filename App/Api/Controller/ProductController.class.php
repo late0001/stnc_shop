@@ -60,7 +60,7 @@ class ProductController extends PublicController {
 			}
 		}
 
-		$content = str_replace('/minipetmrschool/Data/', __DATAURL__, $pro['content']);
+		$content = str_replace('/j8kd/Data/', __DATAURL__, $pro['content']);
 		$pro['content']=html_entity_decode($content, ENT_QUOTES , 'utf-8');
 
 		//检测产品是否收藏

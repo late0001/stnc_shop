@@ -139,17 +139,17 @@ class ShoppingController extends PublicController {
 			exit();
 		}
 
-		$pid = intval($_REQUEST['pid']);
-		$num = intval($_REQUEST['num']);
+		$pid = intval($_REQUEST['pid']);//商品id
+		$num = intval($_REQUEST['num']); //购买数量
 		if (!intval($pid) || !intval($num)) {
 			echo json_encode(array('status'=>0,'err'=>'参数错误.'));
 			exit();
 		}
 
 		//加入购物车
-		$check = $this->check_cart(intval($pid));
+		$check = $this->check_cart(intval($pid));//检测商品是否下架
 		if ($check['status']==0) {
-			echo json_encode(array('status'=>0,'err'=>$check['err']));
+			echo json_encode(array('status'=>0, 'err'=>$check['err']));
 			exit;
 		}
 

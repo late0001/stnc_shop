@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+  <script type="text/javascript" src="__PUBLIC__/admin/js/action.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+   <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+    <link href="__PUBLIC__/admin/css/main.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css" >
+.Hui-aside{position: absolute;top:44px;bottom:0;left:0;padding-top:10px;width:199px;z-index:99;overflow:auto; background-color:rgba(238,238,238,0.98);_background-color:rgb(238,238,238);border-right: 1px solid #e5e5e5}
+/*左侧菜单*/
+.Hui-aside .menu_dropdown dl{ margin-bottom:0}
+.Hui-aside .menu_dropdown dt{display:block;line-height:35px;padding-left:15px;cursor:pointer;position:relative;border-bottom: 1px solid #e5e5e5;font-weight:normal}
+.Hui-aside .menu_dropdown dt .menu_dropdown-arrow{ position:absolute;overflow: hidden; top:0; right:15px;transition-duration:0.3s ;transition-property:all}
+.Hui-aside .menu_dropdown dd{ display:none}
+.Hui-aside .menu_dropdown dt.selected .menu_dropdown-arrow{transform: rotate(180deg)}
+.Hui-aside .menu_dropdown dd.selected{display:block; margin-left:0px}
+.Hui-aside .menu_dropdown ul{padding:0px}
+.Hui-aside .menu_dropdown li{line-height:35px;overflow:hidden;zoom:1}
+.Hui-aside .menu_dropdown li a{padding-left:15px; display:block;font-weight: bold; margin:0}
+.Hui-aside .menu_dropdown li a i{ font-weight: normal}
+.Hui-aside .menu_dropdown dd ul{padding:3px 8px}
+.Hui-aside .menu_dropdown dd li{line-height:32px}
+.Hui-aside .menu_dropdown dd li a{line-height:32px;padding-left:26px; border-bottom:none; font-weight:normal}
+.Hui-aside .menu_dropdown li a:hover{text-decoration:none}
+.Hui-aside .menu_dropdown li.current a,.menu_dropdown li.current a:hover{background-color:rgba(255,255,255,0.2)}
+</style>
+
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+
+
+</head>
+<body>
+<aside class="Hui-aside">
+    <div class="menu_dropdown bk_2">
+        <dl id="menu-article">
+            <dt><i class="Hui-iconfont">&#xe616;</i> 综合管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+
+                    <li>
+                        <a data-title="小程序配置" data-href="{:U('More/setup')}" href="{:U('More/setup')}" target="iframe" >小程序配置</a>
+                    </li>
+
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-picture">
+            <dt><i class="Hui-iconfont">&#xe613;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加产品" data-href="{:U('Product/add')}" href="{:U('Product/add')}" target="iframe">添加产品</a>
+                    </li>
+                    <li>
+                        <a data-title="产品管理" data-href="{:U('Product/index')}" href="{:U('Product/index')}" target="iframe">产品管理</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-product">
+            <dt><i class="Hui-iconfont">&#xe620;</i> 品牌管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加品牌" data-href="{:U('Brand/add')}" href="{:U('Brand/add')}" target="iframe">添加品牌</a>
+                    </li>
+                    <li>
+                        <a data-title="品牌管理" data-href="{:U('Brand/index')}" href="{:U('Brand/index')}" target="iframe">全部品牌</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl id="menu-member">
+            <dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="{:U('User/index')}" data-title="会员管理" href="{:U('User/index')}" target="iframe">会员管理</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-admin">
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="{:U('Adminuser/add')}" data-title="添加管理员" href="{:U('Adminuser/add')}" target="iframe">添加管理员</a></li>
+                    <li><a data-href="{:U('Adminuser/adminuser')}" data-title="管理员管理" href="{:U('Adminuser/adminuser')}" target="iframe">管理员管理</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-tongji">
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-title="全部订单" data-href="{:U('Order/index')}" href="{:U('Order/index')}" target="iframe">全部订单</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-system">
+            <dt><i class="Hui-iconfont">&#xe62e;</i> 分类管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加分类" data-href="{:U('Category/add')}" href="{:U('Category/add')}" target="iframe">添加分类</a>
+                    </li>
+                    <li>
+                        <a data-title="分类管理" data-href="{:U('Category/index')}" href="{:U('Category/index')}" target="iframe">分类管理</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl id="menu-tongji1">
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 优惠券管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加优惠券" data-href="{:U('Voucher/add')}" href="{:U('Voucher/add')}" target="iframe">添加优惠券</a>
+                    </li>
+                    <li>
+                        <a data-title="优惠券管理" data-href="{:U('Voucher/index')}" href="{:U('Voucher/index')}" target="iframe">优惠券管理</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl id="menu-tongji2">
+            <dt><i class="Hui-iconfont">&#xe61a;</i> 广告管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加广告" data-href="{:U('Guanggao/add')}" href="{:U('Guanggao/add')}" target="iframe">添加广告</a>
+                    </li>
+
+                    <li>
+                        <a data-title="广告管理" data-href="{:U('Guanggao/index')}" href="{:U('Guanggao/index')}" target="iframe">广告管理</a>
+                    </li>
+
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+</aside>
+
+</body>
+</html>

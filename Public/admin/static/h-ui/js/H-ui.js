@@ -5472,6 +5472,7 @@ $(function() {
 	function() {
 		$(this).removeClass("hover");
 	});
+	
 	$(document).on("mouseenter", ".dropDown_hover",
 	function() {
 		$(this).addClass("open");

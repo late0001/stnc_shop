@@ -1,4 +1,33 @@
 <extend name="Base/common" />
 <block name="body">
-<?php echo "<p>尼玛</p>"; ?>
+<style type="text/css">
+.holder {
+width:100%;
+height:300px;
+}
+</style>
+<script language="javascript" >
+    $(function(){
+    	jQuery("#slider-3 .slider").slide({mainCell:".bd ul",titCell:".hd li",trigger:"click",effect:"leftLoop",autoPlay:true,delayTime:700,interTime:3000,pnLoop:false,titOnClassName:"active"})});
+</script>
+    <div id="slider-3">
+    	<div class="slider">
+    		<div class="bd">
+    			<ul>
+    				<li><a href="#" target="_blank"><img src="__DATA__/wimages/adv/dynxi_780_235.jpg" ></a></li>
+    				<li><a href="#" target="_blank"><img src="__DATA__/wimages/adv/dynxk_780_235.jpg" ></a></li>
+    				<li><a href="#" target="_blank"><img src="__DATA__/wimages/adv/dynxk_780_235.jpg" ></a></li>
+    				<li><a href="#" target="_blank"><img src="__DATA__/wimages/adv/dynxk_780_235.jpg" ></a></li>
+    			</ul>
+    		</div>
+    		<ol class="hd cl dots">
+    			<li>1</li>
+    			<li>2</li>
+    			<li>3</li>
+    			<li>4</li>
+    		</ol>
+    	</div>
+    </div>	
+	<div class="holder">
+	</div>	
 </block>

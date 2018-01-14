@@ -3,41 +3,152 @@
 <head>
 <title>{$webtitle}</title>
 <link href="__PUBLIC__/admin/static/h-ui/css/H-ui.css" rel="stylesheet" type="text/css" />
- <style type="text/css">
 
+ <script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
+
+ <style type="text/css">
+.ct {
+	text-align: center;
+	vertical-align: middle;
+}
+.clearfix{
+	display:block;
+	*zoom:1;
+}
+.wp-footer{
+	width:100%;
+}
+.wp-inner{
+	width:auto;
+	max-width:1000px;
+	padding-bottom:10px;
+	padding-top:10px;
+	margin:0 auto;
+}
+.wp-inner .b_t_l{
+	width:64%;
+	float:left;
+}
+.wp-inner .b_t_r{
+	width:33%;
+	float:right;
+}
+.wp-footer .wp-inner .footer_ewm {
+    height: 98px;
+}
+
+.footer_ewm p {
+    float: right;
+    width: 33.33%;
+    line-height: 20px;
+    text-align: center;
+}
  </style>
+ <script type="text/javascript">
+var sgf = $(".footer1-nav3 ul li").length;
+$(document).ready(function() {
+if(sgf==2){
+$(".footer1-nav3 ul li").css({'width':'50%'});
+}
+if(sgf==3){
+$(".footer1-nav3 ul li").css({'width':'33.333333%'});
+}
+if(sgf==4){
+$(".footer1-nav3 ul li").css({'width':'25%'});
+}
+else{
+$(".footer1-nav3 ul li").css({'width':'20%'});
+}
+});
+</script>
+<block name="head">
+
+</block>
 </head>
 <body >
 <div align="center" >
-<table width="960" border="0" cellpadding="0" cellspacing="0" >
+<table width="100%" border="0" cellpadding="0" cellspacing="0" >
   <tr>
-    <td width="960" valign="top" align="center"><embed src="__DATA__/wimages/af.swf" width="960" height="182" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></td>
+    <td width="1000px" valign="top" align="center"><embed src="__DATA__/wimages/af.swf" width="1000" height="182" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></td>
   </tr>
 </table>
 </div>
+<div class="ct1">
+	<span    class="dropDown dropDown_hover">
+ 		<a class="dropDown_A" href="{:U('/')}" target="_self"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span><span >首页</span></a>
+
+	</span>
+	<span    class="dropDown dropDown_hover">
+ 		<a class="dropDown_A" href="#"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span><span >经过菜单1</span></a>
+		<ul class="dropDown-menu menu radius box-shadow">
+			<li><a href="#">菜单一</a></li>
+			<li><a href="#">菜单二</a></li>
+		</ul>
+
+	</span> 
+	<span  class="dropDown dropDown_hover">
+		<a class="dropDown_A" href="#"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span>经过菜单2</a>	
+		<ul class="dropDown-menu menu radius box-shadow">
+			<li><a href="#">菜单一</a></li>
+			<li><a href="#">菜单二</a></li>
+		</ul>
+	</span>
+	<span  class="dropDown dropDown_hover">
+		<a class="dropDown_A" href="#"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span>经过菜单3</a>	
+		<ul class="dropDown-menu menu radius box-shadow">
+			<li><a href="#">菜单一</a></li>
+			<li><a href="#">菜单二</a></li>
+		</ul>
+	</span>
+		<span  class="dropDown dropDown_hover">
+		<a class="dropDown_A" href="#"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span>经过菜单4</a>	
+		<ul class="dropDown-menu menu radius box-shadow">
+			<li><a href="#">菜单一</a></li>
+			<li><a href="#">菜单二</a></li>
+		</ul>
+	</span>
+	<span  class="dropDown dropDown_hover">
+		<a class="dropDown_A" href="#"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span>经过菜单5</a>	
+		<ul class="dropDown-menu menu radius box-shadow">
+			<li><a href="#">菜单一</a></li>
+			<li><a href="#">菜单二</a></li>
+		</ul>
+	</span>
+	<span  class="dropDown dropDown_hover">
+		<a class="dropDown_A" href="{:U('Home/About/index')}"><span style="vertical-align:middle; width:1px; height:100%; visibility: hidden; display:inline-block" ></span>联系我们</a>	
+	</span>
+</div>
 <block name="body">
 </block>
-<div id="wrapper" >
-	<div id="ftCon" >
-		<div class="footer1">
+		<div id="base_ft" class="footer1">
 			<div class="footer1-nav3">
 				<ul>
-					<li><a href="" style="color:white">版权声明</a></li>
+					<li><a href="" >版权声明</a></li>
 					<li><a href="">网站地图</a></li>
 					<li><a href="">联系我们</a></li>
 					<li><a href="">帮助信息</a></li>
 					<li><a href="">rss订阅</a></li>
 				</ul>
-			</div>	
-
-			<div style="text-align:center;padding-bottom:10px;padding-top:10px;">
-				备案序号：<a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备17016305号</a><br />
-				程序设计：邱景栋 技术支持：<!--akcms--><span >Powered by <a href='' target='_blank'>jingdong studio</a></span><br />
-				建议IE6.0 1024×768以上分辨率浏览本网站 2007-2012 版权所有<br />
 			</div>
-		</div>
-	</div>
-</div>
+			<div class="wp-footer">	
+			<div class="wp-inner clearfix">
+			<div class="b_t_l">
+				<a href="http://www.miitbeian.gov.cn/" target="_blank"><i class="icon-gns"></i>赣ICP备17016305号</a><br />
+				程序设计：邱景栋&nbsp;&nbsp;&nbsp;&nbsp;  技术支持：<!--akcms--><span >Powered by <a href='' target='_blank'>jingdong studio</a></span><br />
+				违法和不良信息举报电话：180-2697-2274，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试 </br> 版权所有 ©copyright 2016. All rights reserved<br />
+			</div>
+			<div class="b_t_r">
+				<div class="footer_ewm">
+				<p><img src="__DATA__/wimages/jd/mh1.png" width="80" height="80" />
+				</br>
+				我的微信 
+				</p>
+				</div>
+			</div>
+			</div>
+			</div>
 
 </body>
 </html>
